@@ -1,62 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/main"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="#BFEDAF"
-tools:context=".FirstPage">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
 
-<ImageView
-    android:id="@+id/imageView18"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="32dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/logo_hd_removebg_preview" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-<Button
-    android:id="@+id/button3"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="480dp"
-    android:text="Masuk"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+        <!-- Judul -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:paddingBottom="10dp" />
 
-<Button
-    android:id="@+id/button4"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:text="Daftar"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.504"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/button3" />
+        <!-- Peringkat Bintang -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Peringkat Bintang"
+            android:textStyle="bold"
+            android:textSize="16sp" />
 
-<ImageView
-    android:id="@+id/imageView21"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.995"
-    app:srcCompat="@drawable/bg_login_hd_removebg_preview__1_" />
+        <RadioGroup
+            android:id="@+id/rgBintang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onBtnApply"
+            android:orientation="horizontal">
 
-<ImageView
-    android:id="@+id/imageView22"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.995"
-    app:srcCompat="@drawable/bg_login_hd_removebg_preview__1____salin" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RadioButton
+                android:id="@+id/rb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBtnApply"
+                android:text="1★" />
+
+            <RadioButton
+                android:id="@+id/rb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBtnApply"
+                android:text="2★" />
+
+            <RadioButton
+                android:id="@+id/rb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBtnApply"
+                android:text="3★" />
+
+            <RadioButton
+                android:id="@+id/rb4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBtnApply"
+                android:text="4★" />
+
+            <RadioButton
+                android:id="@+id/rb5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBtnApply"
+                android:text="5★" />
+        </RadioGroup>
+
+        <!-- Skor Ulasan -->
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Skor Ulasan"
+            android:textStyle="bold" android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/cbUlasan7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7+ (Cukup Baik)" />
+
+        <CheckBox android:id="@+id/cbUlasan8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="8+ (Bagus)" />
+        <CheckBox android:id="@+id/cbUlasan9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="9+ (Luar Biasa)" />
+        <CheckBox android:id="@+id/cbUlasan10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10+ (Spektakuler)" />
+
+        <!-- Kisaran Harga -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Kisaran Harga/Jam" android:textStyle="bold" android:textSize="16sp" />
+        <SeekBar android:id="@+id/seekBarPrice" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:max="1000000" />
+        <TextView android:id="@+id/tvPriceValue" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Rp. 0 - Rp. 1.000.000" />
+
+        <!-- Area -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Area" android:textStyle="bold" android:textSize="16sp" />
+        <CheckBox android:id="@+id/cbKetintang" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ketintang" />
+
+        <CheckBox
+            android:id="@+id/cbJambangan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jambangan" />
+
+        <CheckBox android:id="@+id/cbGnSari" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gn. Sari" />
+        <CheckBox android:id="@+id/cbWiyung" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wiyung" />
+        <CheckBox android:id="@+id/cbSidoarjo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sidoarjo"/>
+        <CheckBox android:id="@+id/cbJakarta" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Jakarta"/>
+        <CheckBox android:id="@+id/cbMboh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mboh"/>
+
+        <!-- Tombol Reset dan Terapkan -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                android:backgroundTint="@android:color/holo_red_dark" />
+
+            <Button
+                android:id="@+id/btnApply"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Terapkan"
+                android:backgroundTint="@android:color/holo_green_dark" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
